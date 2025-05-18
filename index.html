@@ -25,11 +25,12 @@
     <!-- <div id="soniashah">Madam Sonia Shah</div> -->
     <div id="dawoodshah">Dawood shah Debrai</div> 
     <script >
-        const bakhti = document.getElementById('bakhti');
+       const bakhti = document.getElementById('bakhti');
         if (!bakhti) console.error("Element 'bakhti' not found");
         const sound1 = new Audio('./bakhti.m4a');
+        sound1.preload = 'auto';
         sound1.addEventListener('error', () => console.error("Failed to load bakhti.m4a"));
-        sound1.addEventListener('ended', () => sound1.currentTime = 0); // Reset when audio ends
+        sound1.addEventListener('ended', () => sound1.currentTime = 0);
         bakhti.addEventListener('mouseenter', () => {
             sound1.play().catch(error => console.error("Error playing bakhti:", error));
         });
@@ -40,8 +41,9 @@
         const spenkhan = document.getElementById('spenkhan');
         if (!spenkhan) console.error("Element 'spenkhan' not found");
         const sound2 = new Audio('./spenkhan.m4a');
+        sound2.preload = 'auto';
         sound2.addEventListener('error', () => console.error("Failed to load spenkhan.m4a"));
-        sound2.addEventListener('ended', () => sound2.currentTime = 0); // Reset when audio ends
+        sound2.addEventListener('ended', () => sound2.currentTime = 0);
         spenkhan.addEventListener('mouseenter', () => {
             sound2.play().catch(error => console.error("Error playing spenkhan:", error));
         });
@@ -52,10 +54,11 @@
         const dawoodshah = document.getElementById('dawoodshah');
         if (!dawoodshah) console.error("Element 'dawoodshah' not found");
         const sound3 = new Audio('./dowoodshah.m4a');
-        sound3.addEventListener('error', () => console.error("Failed to load dawoodshah.m4a"));
-        sound3.addEventListener('ended', () => sound3.currentTime = 0); // Reset when audio ends
+        sound3.preload = 'auto';
+        sound3.addEventListener('error', () => console.error("Failed to load dowoodshah.m4a"));
+        sound3.addEventListener('ended', () => sound3.currentTime = 0);
         dawoodshah.addEventListener('mouseenter', () => {
-            sound3.play().catch(error => console.error("Error playing dawoodshah:", error));
+            sound3.play().catch(error => console.error("Error playing dowoodshah:", error));
         });
         dawoodshah.addEventListener('mouseleave', () => {
             sound3.pause();

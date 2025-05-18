@@ -19,6 +19,7 @@
 </head>
 <body>
     <h1>Welcome To dialogs hub</h1>
+    <p>Hover over a name to play his famous dialogue</p>
     <div id="bakhti">King bakhti rahman</div>
     <div id="spenkhan">PM Spen Khan</div>
     <!-- <div id="soniashah">Madam Sonia Shah</div> -->
@@ -50,7 +51,7 @@
         
         const dawoodshah = document.getElementById('dawoodshah');
         if (!dawoodshah) console.error("Element 'dawoodshah' not found");
-        const sound3 = new Audio('./dawoodshah.m4a');
+        const sound3 = new Audio('./dowoodshah.m4a');
         sound3.addEventListener('error', () => console.error("Failed to load dawoodshah.m4a"));
         sound3.addEventListener('ended', () => sound3.currentTime = 0); // Reset when audio ends
         dawoodshah.addEventListener('mouseenter', () => {

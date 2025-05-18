@@ -28,27 +28,36 @@
         if (!bakhti) console.error("Element 'bakhti' not found");
         const sound1 = new Audio('./bakhti.m4a');
         sound1.addEventListener('error', () => console.error("Failed to load bakhti.m4a"));
+        sound1.addEventListener('ended', () => sound1.currentTime = 0); // Reset when audio ends
         bakhti.addEventListener('mouseenter', () => {
-            sound1.currentTime = 0;
             sound1.play().catch(error => console.error("Error playing bakhti:", error));
+        });
+        bakhti.addEventListener('mouseleave', () => {
+            sound1.pause();
         });
         
         const spenkhan = document.getElementById('spenkhan');
         if (!spenkhan) console.error("Element 'spenkhan' not found");
         const sound2 = new Audio('./spenkhan.m4a');
         sound2.addEventListener('error', () => console.error("Failed to load spenkhan.m4a"));
+        sound2.addEventListener('ended', () => sound2.currentTime = 0); // Reset when audio ends
         spenkhan.addEventListener('mouseenter', () => {
-            sound2.currentTime = 0;
             sound2.play().catch(error => console.error("Error playing spenkhan:", error));
+        });
+        spenkhan.addEventListener('mouseleave', () => {
+            sound2.pause();
         });
         
         const dawoodshah = document.getElementById('dawoodshah');
         if (!dawoodshah) console.error("Element 'dawoodshah' not found");
-        const sound3 = new Audio('./dowoodshah.m4a'); // Fixed typo
+        const sound3 = new Audio('./dawoodshah.m4a');
         sound3.addEventListener('error', () => console.error("Failed to load dawoodshah.m4a"));
+        sound3.addEventListener('ended', () => sound3.currentTime = 0); // Reset when audio ends
         dawoodshah.addEventListener('mouseenter', () => {
-            sound3.currentTime = 0;
             sound3.play().catch(error => console.error("Error playing dawoodshah:", error));
+        });
+        dawoodshah.addEventListener('mouseleave', () => {
+            sound3.pause();
         });
     </script>
 </body>
